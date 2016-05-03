@@ -20,7 +20,7 @@
 		      <input ng-model="query" type="text"
 		        placeholder="Filter by" autofocus>
 		    </form>
-		    <div ng-repeat="record in data | filter:query | orderBy: 'createdAt' ">
+		    <div ng-repeat="record in data | filter: { title: query } | orderBy: 'parsedDate' ">
 		      <div id="{{record.id}}">
 		        <div class="title">{{record.title}}</div>
 		        <div class="image"><img class="recordImage" src="{{record.thumbnail}}"></img></div>

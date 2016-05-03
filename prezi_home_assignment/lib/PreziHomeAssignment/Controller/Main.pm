@@ -15,9 +15,6 @@ sub main {
 sub getJSONData {
   my $self = shift;
 
-  my $a = Helpers::FileHelper::loadFromJSON($file);
-  warn Data::Dumper::Dumper($a);
-
   $self->render(json => Helpers::FileHelper::loadFromJSON($file));
 }
 
