@@ -1,0 +1,20 @@
+.mainContainer {
+	background-image: url("../images/background.png");
+	background-size: 100%; 
+	background-repeat: no-repeat;
+	min-height: 100%; 
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.vertical-center {
+  width:270px;
+  height:150px;
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin:-75px 0 0 -135px;
+}

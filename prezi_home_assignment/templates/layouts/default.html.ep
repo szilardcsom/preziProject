@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+    <title>Prezi home assignment</title>
+    
+    <link href="common/css/bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="common/css/style.css" rel="stylesheet" id="bootstrap-css">
+        
+    <script src="common/js/jquery.js"></script>
+    <script src="common/js/angular.min.js"></script>
+    <script src="common/js/underscore.js"></script>
+    <script src="common/js/bootstrap.min.js"></script>
+    
+    <script src="Main.js"></script>
+
+  </head>
+  <body>
+    <%= content %>
+  </body>
+</html>

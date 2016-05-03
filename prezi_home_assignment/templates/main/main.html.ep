@@ -1,0 +1,44 @@
+% layout 'default';
+% title 'Prezi home assignment';
+
+<div class="mainContainer" ng-app="homeAssignApp" ng-controller="homeAssignController">
+
+<div class="vertical-center"> 
+  <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#homeAssignModal">Click to show data loaded from JSON</button>
+</div>
+
+<div id="homeAssignModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Prezi home assignment</h4>
+      </div>
+      <div class="modal-body">
+		    <form class="form-inline">
+		      <input ng-model="query" type="text"
+		        placeholder="Filter by" autofocus>
+		    </form>
+		    <div ng-repeat="record in data | filter:query | orderBy: 'createdAt' ">
+		      <div id="{{record.id}}">
+		        <div class="title">{{record.title}}</div>
+		        <div class="image"><img class="recordImage" src="{{record.thumbnail}}"></img></div>
+		        <div class="imageInfo">
+		          <div>{{record.createdAt}}</div>
+		          <div>{{record.creator.name}}</div>
+		          <div><a href="{{record.creator.profileUrl}}">Profile url</a></div>
+		        </div>
+		      </div>
+		    </div>        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+</div>
