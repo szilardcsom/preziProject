@@ -3,11 +3,40 @@
 
 <div class="mainContainer" ng-app="homeAssignApp" ng-controller="homeAssignController">
 
-<div class="vertical-center"> 
+<!-- <div class="vertical-center"> 
   <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#homeAssignModal">Click to show data loaded from JSON</button>
+</div> -->
+
+<div class="panel panel-default mainContent">
+  <div class="panel-heading">
+    <h3 class="panel-title"><p class="uppercase">Prezi home assignment</p></h3>
+  </div>
+  <div class="panel-body">
+	  <form class="">
+	    <input ng-model="query" type="text"
+	      placeholder="Search for image titles" class="form-control" autofocus>
+	  </form>
+	  <div class="dataContainer" ng-repeat="record in data | filter: { title: query } | orderBy: 'parsedDate' ">
+	    <div id="{{record.id}}">
+	      <div class="title"><h5><p class="uppercase">{{record.title}}</p></h5></div>
+	      <div class="imageContainer"><img src="{{record.thumbnail}}"></img></div>
+	      <div>
+	        <table class="imageInfo">
+	          <tr>
+	            <td><b>{{record.createdAt}}</b></td>
+	            <td>{{record.creator.name}}</td>
+	            <td><a href="{{record.creator.profileUrl}}" target="_blank">Profile url</a></td>
+	          </tr>
+	        </table>
+	      </div>
+	    </div>
+	  </div> 
+  </div>
+  
+  <div class="panel-footer">Created by Szilard Csom 2016.05.</div>
 </div>
 
-<div id="homeAssignModal" class="modal fade" role="dialog">
+<!-- <div id="homeAssignModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <div class="modal-content">
@@ -16,18 +45,22 @@
         <h4 class="modal-title">Prezi home assignment</h4>
       </div>
       <div class="modal-body">
-		    <form class="form-inline">
+		    <form class="">
 		      <input ng-model="query" type="text"
-		        placeholder="Filter by" autofocus>
+		        placeholder="Filter by" class="form-control" autofocus>
 		    </form>
 		    <div ng-repeat="record in data | filter: { title: query } | orderBy: 'parsedDate' ">
 		      <div id="{{record.id}}">
-		        <div class="title">{{record.title}}</div>
+		        <div class="title"><h5><p class="uppercase">{{record.title}}</p></h5></div>
 		        <div class="image"><img class="recordImage" src="{{record.thumbnail}}"></img></div>
-		        <div class="imageInfo">
-		          <div>{{record.createdAt}}</div>
-		          <div>{{record.creator.name}}</div>
-		          <div><a href="{{record.creator.profileUrl}}">Profile url</a></div>
+		        <div>
+		          <table class="imageInfo">
+		            <tr>
+		              <td><b>{{record.createdAt}}</b></td>
+		              <td><p class="uppercase">{{record.creator.name}}</p></td>
+		              <td><a href="{{record.creator.profileUrl}}">Profile url</a></td>
+		            </tr>
+		          </table>
 		        </div>
 		      </div>
 		    </div>        
@@ -38,7 +71,7 @@
     </div>
 
   </div>
-</div>
+</div> -->
 
 
 </div>
